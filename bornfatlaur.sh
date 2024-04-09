@@ -6,7 +6,7 @@ Help() {
    echo -e "\tbornfatlaur - update aur packages"
    echo
    echo "SYNOPSIS"
-   echo -e "\tbornfatlaur [OPTION]..."
+   echo -e "\tbornfatlaur [OPTION]... aur-directory"
    echo
    echo "DESCRIPTION"
    echo -e "\tVery cool but primitive aur packages updater"
@@ -39,7 +39,7 @@ while getopts "h:n:" option; do
 done
 
 # going to aur directory
-cd "/home/logan/aur/"
+cd $1
 
 # parsing directories to array
 directories=$(ls -d */ | tr -d "/" | xargs)
